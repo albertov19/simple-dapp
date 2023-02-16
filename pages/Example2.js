@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Button, Form } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { ethers } from 'ethers';
 import Head from 'next/head';
 

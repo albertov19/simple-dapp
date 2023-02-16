@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Button, Form } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { ethers } from 'ethers';
 import Head from 'next/head';
 import detectEthereumProvider from '@metamask/detect-provider';
@@ -18,10 +18,12 @@ const SimpleDapp = () => {
     const provider = await detectEthereumProvider({ mustBeMetaMask: true });
 
     if (provider) {
+      // Get Chain ID of the Connected Network
       const chainId = await provider.request({
         method: 'eth_chainId',
       });
 
+      // Check if Chain ID is Supported
       let networkName;
       switch (chainId) {
         case '0x507':
@@ -32,6 +34,8 @@ const SimpleDapp = () => {
           setAccount('Only Moonbase Alpha Supported');
           break;
       }
+
+      // Get Accounts
       if (networkName !== '') {
         const accounts = await ethereum.request({
           method: 'eth_requestAccounts',

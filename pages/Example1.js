@@ -24,12 +24,8 @@ const SimpleDapp = () => {
       <div>
         <Form>
           <p>{number}</p>
-          <Button type='submit' onClick={increment}>
-            Increase
-          </Button>
-          <Button type='submit' onClick={reset}>
-            Reset
-          </Button>
+          <Button onClick={increment}>Increase</Button>
+          <Button onClick={reset}>Reset</Button>
         </Form>
       </div>
     </Container>
