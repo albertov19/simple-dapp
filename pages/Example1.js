@@ -6,12 +6,12 @@ const SimpleDapp = () => {
   const [number, setNumber] = useState(0);
 
   // Button to Increment the Number
-  const increment = async () => {
+  const increment = () => {
     setNumber(number + 1);
   };
 
   // Button to Reset the Number
-  const reset = async () => {
+  const reset = () => {
     setNumber(0);
   };
 
